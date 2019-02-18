@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>Dactylab</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" id="explic">
+        <div class="row justify-content-end">
+            <div id="pres">
+                <p>Bienvenue sur Dactylab, votre assistant en dactylographie.</p>
+
+                <p> Si vous avez déjà utilisé une machine à écrire alors le principe est identique avec un clavier
+                    d'ordinateur : pour produire une lettre, il suffit d'appuyer dessus sans la maintenir, <input
+                        type="text" name="" id="" placeholder="Appuyez sur une touche"> si vous le
+                    faite ainsi la lettre se repettera très rapidement <input type="text" name="" id=""
+                        placeholder="Maintenez une touche">. </p>
+
+                <p>Il existe principalement quatre types de touches : les touches typographiques donc qui produisent des
+                    caractères, les touches de type modificateur, les touches de type fonction et les touches de type
+                    verrouillage, mais ce qui nous intéresse ici ce sont les deux premières. </p>
+
+                <p>Les touches typographiques sont celles qui produisent des lettres, des chiffres et des caractères
+                    spéciaux les parenthèses, la virgule, le point etc. Seules quatres touches ne produisent pas
+                    réellement de caractère : la touche retour arrière <img src="img/effacer.png" alt=""
+                        class="keyboards"> permet d'effacer un caractère qui se situe à droite du curseur , la touche
+                    supprimer <img src="img/supprimer.png" alt="" class="keyboards"> permet de supprimer un caractère
+                    qui se situe à gauche du curseur,
+                    la touche entrée <img src="img/entree.png" alt="" class="keyboards"> permet de faire un retour à la
+                    ligne, la touche espace <img src="img/espace.png" alt="" class="keyboards"> permet de créer un
+                    espace entre deux caractères
+                    et la touche tabulation <img src="img/tab.png" alt="" class="keyboards"> permet de faire un alinéa.
+                </p>
+
+                <p> Il y a plusieurs touches de type modificateur mais seulement trois s'utilisent dans la production de
+                    texte : la touche shift <img src="img/shift.png" alt="" class="keyboards">, la touche verr. maj <img
+                        src="img/maj.png" alt="" class="keyboards"> et la touche alt gr <img src="img/alt-gr.png" alt=""
+                        class="keyboards"> </p>
+
+
+            </div>
+
+            <div>
+                <button class="btn btn-primary" id="suivant">Suivant</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display: none;" id="applic">
+        <div class="row justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center" id="conteneur">
+                <div style="width:80%; ">
+                    <div id="container" class="d-flex flex-column ">
+                        <div id="limit" class="d-flex justify-content-center">
+                            <div id="screen">
+                                <div id="text">Hello</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="div2" class="d-flex justify-content-center">
+                        <div>
+                            <input type="text" id="answer" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="score">
+                    <h3>Niveau : <span id="level"></span></h3>
+                    <hr>
+                    <h2>Score</h2>
+                    <div id="thisList">
+                        <ul class="list-group">
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <iframe src="logo_white.svg" frameborder="0" id="logo"></iframe>
+
+    <style>
+        .keyboards {
+            height: 40px;
+        }
+
+        #pres {
+            font-size: 20px;
+            text-align: justify;
+        }
+
+
+        #logo {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #91A8D0;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(107, 137, 190);
+        }
+
+        #conteneur {
+            border-top: 5px solid #FFBF00;
+            width: 100%;
+
+
+        }
+
+        body {
+            background-color: #FFBF00;
+        }
+
+        #container {
+            border: 2px solid #F0EDE5;
+            height: 80vh;
+            background-color: #F0EDE5;
+            font-size: 50px;
+            width: 95%;
+            box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        #div2 {
+            border: 2px solid #F0EDE5;
+            height: 10vh;
+            background-color: #F0EDE5;
+            width: 95%;
+            box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        #limit {
+            border-bottom: 4px solid red;
+            min-width: 100%;
+            height: 75vh;
+        }
+
+        #text {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            margin: auto;
+            left: 0;
+            right: 0;
+
+        }
+
+        #screen {
+            position: relative;
+            height: 10vh;
+            width: 200px;
+
+        }
+
+        #score {
+
+            height: 90vh;
+            width: 20%;
+            background-color: #F0EDE5;
+            box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.85);
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        li {
+            color: green;
+            font-size: 30px;
+        }
+
+        #thisList {
+            overflow: auto;
+            height: 77.5vh;
+        }
+    </style>
+
+
+
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+        var words = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQSTUVWXYZ0123456789²\&é"\'(-è_çà=)~#{[|`\\^@]}^$ù!:;,¨£%§/.?¤<>';
+        var boxSize = 10;
+        var win = 0;
+        var lvl = 1;
+
+        function toRandom() {
+            var i = Math.floor(Math.random() * words.length);
+            return words[i];
+        }
+
+        function ranDom() {
+            var plouc = '';
+            for (var k = 0; k < lvl; k++) {
+                plouc += toRandom();
+            }
+            return plouc;
+        }
+
+
+        function down() {
+            boxSize = 77;
+            $('#screen').animate({ height: boxSize + 'vh' }, 10000, function () {
+                $('#text').text(ranDom());
+                boxSize = 10;
+                $('#screen').css('height', boxSize + 'vh');
+                $('#thisList').scrollTop($('#thisList').height());
+            });
+        }
+
+        down();
+
+        setInterval(down, 600);
+
+
+        $('#text').text(toRandom());
+
+
+        $('#answer').on('input', function (e) {
+
+            var answer = $('#answer').val();
+            var textTyped = $('#text').text();
+            var i = answer.length - 1;
+
+
+            if (answer[i] !== textTyped[i] && answer.length > 0) {
+                $('#text').css('color', 'red');
+            } else {
+                $('#text').css('color', 'green');
+            }
+
+            if (answer == textTyped) {
+
+                if (win == 5) {
+                    lvl++;
+                    win = 0;
+                } else {
+                    win++;
+                }
+
+                $('#text').text(ranDom());
+                $('ul').append('<li class="list-group-item">' + textTyped + '</li>')
+                $('#answer').val('');
+                $('#screen').finish();
+                $('#level').html(lvl);
+                boxSize = 10;
+                down();
+                $('#text').css('color', 'black');
+                console.log(win);
+            }
+
+            $('#thisList').scrollTop($('#thisList').height());
+
+        })
+
+        $('#suivant').on('click', function() {
+            $('#explic').hide();
+            $('#applic').fadeIn('slow');
+        })
+
+    </script>
+</body>
+
+</html>

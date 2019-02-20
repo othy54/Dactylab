@@ -8,15 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
+
+    <!-- PAGE D'ACCUEIL -->
+
     <div id="loader">
         <img class="animated fadeIn delay-1s img-fluid" src="img/dribble.gif">
         <p id="txtWelcome">Bienvenue sur Dactylab <br> Votre assistant en dactylographie</p>
@@ -32,6 +33,9 @@
     <div class="container" id="explic" style="display:none;">
         <div class="row justify-content-center align-items-center" style="height:100vh;">
             <div id="pres">
+
+
+
                 <div class="tutorialPage" id="tutorial1" style="display:none;">
                     <p>Si vous avez déjà utilisé une machine à écrire alors le
                         principe est
@@ -77,12 +81,14 @@
                     expliquant comment cela marche : <br><img src="img/schema.png" alt=""
                         style="height:460px; display: block; margin:auto;">
 
-                        <button class="btn btn-light" style="display: block; margin:auto;" id="btnDactylab2"> Aller au Dactylab </button>
+                    <button class="btn btn-light" style="display: block; margin:auto;" id="btnDactylab2"> Aller au
+                        Dactylab </button>
                 </p>
 
 
             </div>
 
+            <!-- PAGINATION -->
             <div id="pageBtns">
                 <div id="subPageBtns" style="display: none;">
                     <button class="btn btn-light myPagination" id="btnPrevious">
@@ -98,6 +104,8 @@
         </div>
     </div>
 
+    <!-- APPLICATION -->
+
     <div class="container" style="display: none;" id="applic">
         <div class="row justify-content-center align-items-center">
             <div class="d-flex justify-content-center align-items-center" id="conteneur">
@@ -110,12 +118,16 @@
                         </div>
                     </div>
 
+                    <!-- ZONE DE JEU -->
+
                     <div id="div2" class="d-flex justify-content-center">
                         <div>
                             <input type="text" id="answer" class="form-control">
                         </div>
                     </div>
                 </div>
+
+                <!-- SCORE -->
 
                 <div id="score">
                     <h3>Niveau : <span id="level"></span></h3>
@@ -131,347 +143,15 @@
             </div>
         </div>
     </div>
-    <style>
-        #pageBtns {
-            position: absolute;
-            bottom: 30px;
-        }
-
-        .myPagination {
-            background-color: transparent;
-            margin: 5px;
-        }
-
-        #loader {
-            height: 100vh;
-            background-color: #01a4db;
-            text-align: center;
-            color: white;
-            font-size: 2.5vmax;
-        }
-
-        .keyboards {
-            height: 40px;
-        }
-
-        #pres {
-            font-size: 1.8vmax;
-            text-align: justify;
-        }
 
 
-        #logo {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-        }
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #91A8D0;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgb(107, 137, 190);
-        }
-
-        #conteneur {
-            border-top: 5px solid #FFBF00;
-            width: 100%;
-
-
-        }
-
-        body {
-            background-color: #FFBF00;
-        }
-
-        #container {
-            border: 2px solid #F0EDE5;
-            height: 80vh;
-            background-color: #F0EDE5;
-            font-size: 50px;
-            width: 95%;
-            box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.75);
-        }
-
-        #div2 {
-            border: 2px solid #F0EDE5;
-            height: 10vh;
-            background-color: #F0EDE5;
-            width: 95%;
-            box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.75);
-        }
-
-        #limit {
-            border-bottom: 4px solid red;
-            min-width: 100%;
-            height: 75vh;
-        }
-
-        #text {
-            position: absolute;
-            bottom: 0;
-            text-align: center;
-            margin: auto;
-            left: 0;
-            right: 0;
-
-        }
-
-        #screen {
-            position: relative;
-            height: 10vh;
-            width: 200px;
-
-        }
-
-        #score {
-
-            height: 90vh;
-            width: 20%;
-            background-color: #F0EDE5;
-            box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.85);
-        }
-
-        h2,
-        h3 {
-            text-align: center;
-        }
-
-        li {
-            color: green;
-            font-size: 30px;
-        }
-
-        #thisList {
-            overflow: auto;
-            height: 77.5vh;
-        }
-    </style>
-
-
-
-
-    <!-- Optional JavaScript -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.2/dist/typeit.min.js"> </script>
-
-    <script>
-
-
-
-        const instance = new TypeIt('#txtWelcome', {
-            startDelay: 1250,
-            speed: 50,
-        }).exec(async () => {
-            await new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    $('.begin').fadeIn('slow');
-                    return resolve();
-                }, 500)
-            });
-        })
-            .go();
-
-        $('#btnTutorial').on('click', function () {
-
-            $('#page1').val('on').css('background-color', 'white');
-            $('#loader').fadeOut('slow').promise().done(function () {
-                $('#explic').show();
-                $('#subPageBtns').fadeIn();
-                $('#tutorial1').fadeIn();
-            });
-        })
-
-
-        $('#page1').on('click', function () {
-
-            $('.myPagination').css('background-color', 'transparent').val('');
-            $('.tutorialPage').hide().promise().done(function () {
-                $('#tutorial1').fadeIn();
-            });
-
-            $('#page1').css('background-color', 'white').val('on');
-        })
-
-
-        $('#page2').on('click', function () {
-            $('.myPagination').css('background-color', 'transparent').val('');
-            $('.tutorialPage').hide().promise().done(function () {
-                $('#tutorial2').fadeIn();
-            });
-            $('#page2').css('background-color', 'white').val('on');
-        })
-
-        $('#page3').on('click', function () {
-            $('.myPagination').css('background-color', 'transparent').val('');
-            $('.tutorialPage').hide().promise().done(function () {
-                $('#tutorial3').fadeIn();
-            });
-            $('#page3').css('background-color', 'white').val('on');
-        })
-
-        $('#page4').on('click', function () {
-            $('.myPagination').css('background-color', 'transparent').val('');
-            $('.tutorialPage').hide().promise().done(function () {
-                $('#tutorial4').fadeIn();
-            });
-            $('#page4').css('background-color', 'white').val('on');
-        })
-
-        $('#page5').on('click', function () {
-            $('.myPagination').css('background-color', 'transparent').val('');
-            $('.tutorialPage').hide().promise().done(function () {
-                $('#tutorial5').fadeIn();
-            });
-            $('#page5').css('background-color', 'white').val('on');
-        })
-
-
-
-        $('#btnNext').on('click', function () {
-            var catchPage = Number($('#subPageBtns').find('button[value=on]').text());
-            console.log(catchPage);
-            if (catchPage < 5) {
-                $('.myPagination').css('background-color', 'transparent').val('');
-                $('.tutorialPage').hide().promise().done(function () {
-                    $('#tutorial' + (catchPage + 1)).fadeIn();
-                });
-                $('#page' + (catchPage + 1)).css('background-color', 'white').val('on');
-            }
-
-        })
-
-        $('#btnPrevious').on('click', function () {
-            var catchPage = Number($('#subPageBtns').find('button[value=on]').text());
-            console.log(catchPage);
-
-            if (catchPage > 1) {
-
-                $('.myPagination').css('background-color', 'transparent').val('');
-                $('.tutorialPage').hide().promise().done(function () {
-                    $('#tutorial' + (catchPage - 1)).show();
-                });
-                $('#page' + (catchPage - 1)).css('background-color', 'white').val('on');
-            }
-        })
-
-        $('#btnDactylab').on('click', function () {
-            $('#loader').hide();
-            $('#applic').fadeIn();
-        })
-
-        $('#btnDactylab2').on('click', function() {
-            $('#explic').hide();
-            $('#applic').fadeIn();
-        })
-
-
-
-        var words = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQSTUVWXYZ0123456789²\&é"\'(-è_çà=)~#{[|`\\^@]}^$ù!:;,¨£%§/.?¤<>';
-        var boxSize = 10;
-        var win = 0;
-        var lvl = 1;
-
-        function toRandom() {
-            var i = Math.floor(Math.random() * words.length);
-            return words[i];
-        }
-
-        function ranDom() {
-            var plouc = '';
-            for (var k = 0; k < lvl; k++) {
-                plouc += toRandom();
-            }
-            return plouc;
-        }
-
-
-        function down() {
-            boxSize = 77;
-            $('#screen').animate({ height: boxSize + 'vh' }, 10000, function () {
-                $('#text').text(ranDom());
-                boxSize = 10;
-                $('#screen').css('height', boxSize + 'vh');
-                $('#thisList').scrollTop($('#thisList').height());
-            });
-        }
-
-        
-
-        $('#btnBegin').on('click',function() {
-            $('#answer').focus();
-            $('#text').text(toRandom());
-            setInterval(down, 600);
-        })
-
-
-         
-
-
-        $('#answer').on('input', function (e) {
-
-            var answer = $('#answer').val();
-            var textTyped = $('#text').text();
-            var i = answer.length - 1;
-
-
-            if (answer[i] !== textTyped[i] && answer.length > 0) {
-                $('#text').css('color', 'red');
-            } else {
-                $('#text').css('color', 'green');
-            }
-
-            if (answer == textTyped) {
-
-                if (win == 5) {
-                    lvl++;
-                    win = 0;
-                } else {
-                    win++;
-                }
-
-                $('#text').text(ranDom());
-                $('ul').append('<li class="list-group-item">' + textTyped + '</li>')
-                $('#answer').val('');
-                $('#screen').finish();
-                $('#level').html(lvl);
-                boxSize = 10;
-                down();
-                $('#text').css('color', 'black');
-                console.log(win);
-            }
-
-            $('#thisList').scrollTop($('#thisList').height());
-
-        })
-
-        $('#suivant').on('click', function () {
-            $('#explic').hide();
-            $('#applic').fadeIn('slow');
-        })
-
-    </script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/typeit.min.js"> </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -10,25 +10,49 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 </head>
 
 <body>
-    <div class="container" id="explic">
-        <div class="row justify-content-end">
+    <div id="loader">
+        <img class="animated fadeIn delay-1s img-fluid" src="img/dribble.gif">
+        <p id="txtWelcome">Bienvenue sur Dactylab <br> Votre assistant en dactylographie</p>
+        <button class="btn btn-light begin" style="color: #01a4db; font-size: 1.5vmax; display:none;"
+            id="btnTutorial">Tutoriel</button>
+        <button class="btn btn-light begin" style="color: #01a4db; font-size: 1.5vmax; display:none;"
+            id="btnDactylab">Dactylab</button>
+    </div>
+
+
+
+
+    <div class="container" id="explic" style="display:none;">
+        <div class="row justify-content-center align-items-center" style="height:100vh;">
             <div id="pres">
-                <p>Bienvenue sur Dactylab, votre assistant en dactylographie.</p>
+                <div class="tutorialPage" id="tutorial1" style="display:none;">
+                    <p>Si vous avez déjà utilisé une machine à écrire alors le
+                        principe est
+                        identique avec un clavier
+                        d'ordinateur : pour produire une lettre, il suffit d'appuyer dessus sans la maintenir. <input
+                            type="text" class="form-control  mt-3" placeholder="Appuyez sur une touche"></p>
+                    <p> Si vous le faites ainsi la lettre se répétera très
+                        rapidement. <input class="form-control mt-3" type="text" placeholder="Maintenez une touche">
+                    </p>
 
-                <p> Si vous avez déjà utilisé une machine à écrire alors le principe est identique avec un clavier
-                    d'ordinateur : pour produire une lettre, il suffit d'appuyer dessus sans la maintenir, <input
-                        type="text" name="" id="" placeholder="Appuyez sur une touche"> si vous le
-                    faite ainsi la lettre se repettera très rapidement <input type="text" name="" id=""
-                        placeholder="Maintenez une touche">. </p>
 
-                <p>Il existe principalement quatre types de touches : les touches typographiques donc qui produisent des
+                </div>
+
+                <p class="tutorialPage" id="tutorial2" style="display:none;">Il existe principalement quatre types de
+                    touches : les touches
+                    typographiques donc qui produisent des
                     caractères, les touches de type modificateur, les touches de type fonction et les touches de type
                     verrouillage, mais ce qui nous intéresse ici ce sont les deux premières. </p>
 
-                <p>Les touches typographiques sont celles qui produisent des lettres, des chiffres et des caractères
+                <p class="tutorialPage" id="tutorial3" style="display:none;">Les touches typographiques sont celles qui
+                    produisent des lettres, des chiffres et des caractères
                     spéciaux les parenthèses, la virgule, le point etc. Seules quatres touches ne produisent pas
                     réellement de caractère : la touche retour arrière <img src="img/effacer.png" alt=""
                         class="keyboards"> permet d'effacer un caractère qui se situe à droite du curseur , la touche
@@ -40,16 +64,36 @@
                     et la touche tabulation <img src="img/tab.png" alt="" class="keyboards"> permet de faire un alinéa.
                 </p>
 
-                <p> Il y a plusieurs touches de type modificateur mais seulement trois s'utilisent dans la production de
+                <p class="tutorialPage" id="tutorial4" style="display:none;"> Il y a plusieurs touches de type
+                    modificateur mais seulement trois s'utilisent dans la production de
                     texte : la touche shift <img src="img/shift.png" alt="" class="keyboards">, la touche verr. maj <img
-                        src="img/maj.png" alt="" class="keyboards"> et la touche alt gr <img src="img/alt-gr.png" alt=""
-                        class="keyboards"> </p>
+                        src="img/maj.png" alt="" class="keyboards"> et la touche alt gr. <img src="img/alt-gr.png"
+                        alt="" class="keyboards"> Les deux premières touches permettent de taper une lettre en majuscle,
+                    la différence entre les deux c'est que la touche shift a besoin d'être maintenue alors que la touche
+                    Verr. Maj verouille les majuscules donc elle n'a pas besoin d'être maintenue </p>
+
+                <p class="tutorialPage" id="tutorial5" style="display:none;">
+                    Vous avez certainement remarqué que certaines touches comportent trois caractères. Voici un schéma
+                    expliquant comment cela marche : <br><img src="img/schema.png" alt=""
+                        style="height:460px; display: block; margin:auto;">
+
+                        <button class="btn btn-light" style="display: block; margin:auto;" id="btnDactylab2"> Aller au Dactylab </button>
+                </p>
 
 
             </div>
 
-            <div>
-                <button class="btn btn-primary" id="suivant">Suivant</button>
+            <div id="pageBtns">
+                <div id="subPageBtns" style="display: none;">
+                    <button class="btn btn-light myPagination" id="btnPrevious">
+                        <<< </button> <button class="btn btn-light myPagination" id="page1">1
+                    </button>
+                    <button class="btn btn-light myPagination" id="page2">2</button>
+                    <button class="btn btn-light myPagination" id="page3">3</button>
+                    <button class="btn btn-light myPagination" id="page4">4</button>
+                    <button class="btn btn-light myPagination" id="page5">5</button>
+                    <button class="btn btn-light myPagination" id="btnNext"> >>> </button>
+                </div>
             </div>
         </div>
     </div>
@@ -61,7 +105,7 @@
                     <div id="container" class="d-flex flex-column ">
                         <div id="limit" class="d-flex justify-content-center">
                             <div id="screen">
-                                <div id="text">Hello</div>
+                                <div id="text"><button class="btn btn-light" id="btnBegin">Commencer</button></div>
                             </div>
                         </div>
                     </div>
@@ -87,15 +131,31 @@
             </div>
         </div>
     </div>
-    <iframe src="logo_white.svg" frameborder="0" id="logo"></iframe>
-
     <style>
+        #pageBtns {
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .myPagination {
+            background-color: transparent;
+            margin: 5px;
+        }
+
+        #loader {
+            height: 100vh;
+            background-color: #01a4db;
+            text-align: center;
+            color: white;
+            font-size: 2.5vmax;
+        }
+
         .keyboards {
             height: 40px;
         }
 
         #pres {
-            font-size: 20px;
+            font-size: 1.8vmax;
             text-align: justify;
         }
 
@@ -214,8 +274,118 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.2/dist/typeit.min.js"> </script>
 
     <script>
+
+
+
+        const instance = new TypeIt('#txtWelcome', {
+            startDelay: 1250,
+            speed: 50,
+        }).exec(async () => {
+            await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    $('.begin').fadeIn('slow');
+                    return resolve();
+                }, 500)
+            });
+        })
+            .go();
+
+        $('#btnTutorial').on('click', function () {
+
+            $('#page1').val('on').css('background-color', 'white');
+            $('#loader').fadeOut('slow').promise().done(function () {
+                $('#explic').show();
+                $('#subPageBtns').fadeIn();
+                $('#tutorial1').fadeIn();
+            });
+        })
+
+
+        $('#page1').on('click', function () {
+
+            $('.myPagination').css('background-color', 'transparent').val('');
+            $('.tutorialPage').hide().promise().done(function () {
+                $('#tutorial1').fadeIn();
+            });
+
+            $('#page1').css('background-color', 'white').val('on');
+        })
+
+
+        $('#page2').on('click', function () {
+            $('.myPagination').css('background-color', 'transparent').val('');
+            $('.tutorialPage').hide().promise().done(function () {
+                $('#tutorial2').fadeIn();
+            });
+            $('#page2').css('background-color', 'white').val('on');
+        })
+
+        $('#page3').on('click', function () {
+            $('.myPagination').css('background-color', 'transparent').val('');
+            $('.tutorialPage').hide().promise().done(function () {
+                $('#tutorial3').fadeIn();
+            });
+            $('#page3').css('background-color', 'white').val('on');
+        })
+
+        $('#page4').on('click', function () {
+            $('.myPagination').css('background-color', 'transparent').val('');
+            $('.tutorialPage').hide().promise().done(function () {
+                $('#tutorial4').fadeIn();
+            });
+            $('#page4').css('background-color', 'white').val('on');
+        })
+
+        $('#page5').on('click', function () {
+            $('.myPagination').css('background-color', 'transparent').val('');
+            $('.tutorialPage').hide().promise().done(function () {
+                $('#tutorial5').fadeIn();
+            });
+            $('#page5').css('background-color', 'white').val('on');
+        })
+
+
+
+        $('#btnNext').on('click', function () {
+            var catchPage = Number($('#subPageBtns').find('button[value=on]').text());
+            console.log(catchPage);
+            if (catchPage < 5) {
+                $('.myPagination').css('background-color', 'transparent').val('');
+                $('.tutorialPage').hide().promise().done(function () {
+                    $('#tutorial' + (catchPage + 1)).fadeIn();
+                });
+                $('#page' + (catchPage + 1)).css('background-color', 'white').val('on');
+            }
+
+        })
+
+        $('#btnPrevious').on('click', function () {
+            var catchPage = Number($('#subPageBtns').find('button[value=on]').text());
+            console.log(catchPage);
+
+            if (catchPage > 1) {
+
+                $('.myPagination').css('background-color', 'transparent').val('');
+                $('.tutorialPage').hide().promise().done(function () {
+                    $('#tutorial' + (catchPage - 1)).show();
+                });
+                $('#page' + (catchPage - 1)).css('background-color', 'white').val('on');
+            }
+        })
+
+        $('#btnDactylab').on('click', function () {
+            $('#loader').hide();
+            $('#applic').fadeIn();
+        })
+
+        $('#btnDactylab2').on('click', function() {
+            $('#explic').hide();
+            $('#applic').fadeIn();
+        })
+
 
 
         var words = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQSTUVWXYZ0123456789²\&é"\'(-è_çà=)~#{[|`\\^@]}^$ù!:;,¨£%§/.?¤<>';
@@ -247,12 +417,16 @@
             });
         }
 
-        down();
+        
 
-        setInterval(down, 600);
+        $('#btnBegin').on('click',function() {
+            $('#answer').focus();
+            $('#text').text(toRandom());
+            setInterval(down, 600);
+        })
 
 
-        $('#text').text(toRandom());
+         
 
 
         $('#answer').on('input', function (e) {
@@ -292,7 +466,7 @@
 
         })
 
-        $('#suivant').on('click', function() {
+        $('#suivant').on('click', function () {
             $('#explic').hide();
             $('#applic').fadeIn('slow');
         })

@@ -5,7 +5,7 @@ This is a helpful project for people who don't use to type on a keyboard with a 
 ### Prerequisites
 
 ```
-Nothing, just download the project
+Nothing, just download the project, and click on index.html
 ```
 
 ## Built With
